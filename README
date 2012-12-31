@@ -1,0 +1,5 @@
+PLEASE NOTE:
+The development of Pxell(formerly Netoffice). The current commit 
+in the trunc is a stable development release of  v2.6.0b2. It uses a new 
+configuration file format and a new database scheme which both might change 
+until the release of v2.6.0b2 without update/upgrade support.
