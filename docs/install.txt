@@ -1,0 +1,48 @@
+INSTALL/UPGRADE
+
+# Application website and project website are both hosted by SourceForge
+http://netoffice.sourceforge.net
+http://sourceforge.net/projects/netoffice
+
+# Requirements
+- Php 4.1.0 or greater (4.3.x or greater recommended)
+- session support enabled
+- file_uploads On
+- MySQL
+
+
+# Upgrading (starting from version 2.5.2)
+- IMPORTANT: Make a backup copy of your "includes/settings.php" and backup 
+  the database (we are not responsible for lost data!)
+- Replace all files in your NetOffice folder with files from the new 
+  package.
+- Start the upgrade at installation/upgrade.php
+- Remove installation folder and its contents after successfull 
+  install for security reasons.
+- Login at index.php
+
+
+# Installing (only for first install, not for upgrade)
+- Extract in one folder, "netoffice" for example
+- Unix/Linux: rename "includes/settings_blank.php" to "includes/settings.php"
+
+- Prefered method (more secure): As the root user issue the following 
+  commands replacing apache with your webserver user/group
+  + Unix/Linux: chmod 664 "includes/settings.php" file
+  + Unix/Linux: chown appache:apache "includes/settings.php" file
+  + Unix/Linux: chmod 775 "files" folder 
+  + Unix/Linux: chown appache:apache "files" folder 
+  + Unix/Linux: chmod 775 "logos_clients" folder 
+  + Unix/Linux: chown appache:apache "logos_clients" folder 
+
+- Secondary method (less secure): If you don't have permissions to do the 
+  above then try this
+  + Unix/Linux: chmod 666 "includes/settings.php" file
+  + Unix/Linux: chmod 777 "files" folder 
+  + Unix/Linux: chmod 777 "logos_clients" folder 
+
+- Create a new MySql database "netoffice" or use existing database
+- Start installation at installation/setup.php
+- Set all parameters
+- Remove installation folder after successfull install
+- Login at index.php

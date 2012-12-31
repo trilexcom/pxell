@@ -1,0 +1,237 @@
+CHANGES
+
+2005-06-11 - NetOffice 2.6.0 beta2
++ Minor fixes and touch ups for a new beta release (madbear)
+
+2005-06-09
++ Update JpGraph to latest stable version 1.18 (madbear)
+
+2005-05-31
++ Fixed reports/resultsreport.php display, reported by alpha. (madbear)
+
+2005-05-30
++ Added links on appropriate pages to the iCalendar script (madbear)
+
+2005-05-29
++ Added basic iCalendar (iCal) support for Task, Milestones, and 
+  Meetings: calendar/icalendar.php   (madbear)
+
+2005-05-27
++ Implemented fix for "Screen Redraw Issue in block.class.php"
+  bug. (madbear)
++ Fixed Multi-task updating notifications. (madbear)
++ Made all date selection fields editable. (madbear)
+
+2005-05-24
++ All Gantt charts now look the same.  The activity bars are color 
+  coded to match the status color and the fill color is red for high 
+  priority task.  So you can visually see the state of things. (madbear)
++ Phase listings and Views now have opened/closed task(s) and milestone 
+  sections (madbear)
+
+2005-05-20
++ Updated overlib from 4.10 to 4.17 (madbear)
++ Updated jscalendar from 0.9.6 to 1.0 (madbear)
+
+2005-01-27
++ ADDED language editor for multiple language support (dylan)
+  It is completely backwards compatible, but people should refrain from
+  editing the lang_XX files directly from now and use the editor instead -
+  please cvs add the global_xx.php files once you have created them.
+  Eventually I plan to phase out the lang_XX.php files.
+  Developers should use the global text( ) function to get translated
+  strings so the user doesn't get blanks if there isn't a translation
+  available.
+
+2005-01-23
++ UPDATED jpgraph to 1.17 final (madbear)
+
+2005-01-20
++  [ 964709 ] Security Hole: tightened permissions for these actions (madbear)
+
+2005-01-06
++ ADDED project calendar (luiswang)
++ Fixed bug with sql error in upgrade_db.php (luiswang)
++ Fixed bug with meeting related tables not maintain when meeting's
+  project changed (luiswang)
++ Fixed bug with table tasks_time not maintain when task's project
+  changed (luiswang)
+
+2005-01-04
++ ADDED Milestone (luiswang)
+
+2004-12-23 - NetOffice 2.6.0 beta1 (happy holidays)
++ Minor touch ups and fixes (tom and scott)
+
+2004-12-17
++ disabled taskNotification to skip not implemented function (tom)
++ new tasks assigned to user by default
++ new tasks open by default
++ project-view: 20 tasks shown (priority as icon only, no id)
+
+2004-12-12
++ Switched away from the older (and deprecated) long predefined array
+  variables ($HTTP_*_VARS).  Now we are using the superglobals that 
+  were introduced in PHP 4.1.0 (madbear)
+
+2004-12-06
++ ADDED Meetings (luiswang)
+
+2004-12-05
++ Fixed bug with heading toggles not maintaining state (madbear)
+
+2004-12-03:
++ UPDATED Chinese traditional language files (luiswang)
++ UPDATED phpmailer from 1.71 to 1.72 (madbear)
++ UPDATED javascript overlib from 3.51 to 4.10 and relocated to 
+  its own sub-directory within the javascript directory (madbear)
++ UPDATED jscalendar from 0.9.5 to 0.9.6 and relocated to its own
+  sub-directory within the javascript directory (madbear)
++ UPDATED jpgraph from 1.14 to 1.17b2, which is tagged as the 
+  latest stable and the recommended download (madbear)
+
+2004-11-15:
++ block.class-headingForm() (tom)
++ hack for automatically closing headingToggle by closePaletteIcon() (tom)
++ style for forms (tom)
++ pageTitle written by header() (tom)
+
+2004-11-12:
++ adjusted deepblue-theme (CSS and block-class) (tom)
++ implemented new pageHeader with breadcrumb and Msg-Output (tom)
++ removed all local msg-outputs (tom)
++ introduced as global-vars section at library.php (tom)
++ defined constants for link-types (tom)
++ removed buildLink()-function from block-class to clean up code (tom)
++ added a list of possible page sections (tom)
+
++ Fixed 'profileSession' -> 'profilSession' in 'viewTopic.php' (tom)
+
++ Fixed bug in editclients file, referencing wrong object (madbear)                     
++ Added 193 more file type icons for linked content displays (madbear)
++ Improved file_info_type function, now all you need to add an icon 
+  for a particular file type is to copy the "<ext>.gif" file to 
+  "interface/icones/" directory.  Searches for GIF, JPG, and PNG images, 
+  (contributed by Cleber P. de Souza)
+  
+
+# NetOffice 2.5.3-pl1 / 2003-01-19
++ Removed usage of "mysql_ping", it is PHP >= 4.3 specific. This
+  was the cause of the "Blank Screen" bug if you used older 
+  PHP versions than 4.3.x (madbear)
++ Changed how classes are loaded, now we use absolute paths
+  rather than relative ones, more reliable (madbear)
++ Switched to the LONG Superglobals (HTTP_*_VARS) for greater 
+  compatibility with older PHP versions, still only officially
+  support PHP >= 4.1 (madbear)
++ Made some configuration changes to jpgraph.php to look a little
+  harder for your fonts directory, else error with message if it
+  can't find it. Also set some defines to speed it up (madbear)
++ BUG FIX [878657] modified mail notification footer to include 
+  correct link to the login page (madbear)
++ BUG FIX [873511] task sorting on viewproject.php page has 
+  been corrected (madbear)
++ BUG FIX [803578] Report Results Sorting has been fixed (madbear)
+
+
+# NetOffice 2.5.3 / 2003-12-24
++ BUG FIX [ 852489 ] typo error in url makes edit project failing (madbear)
++ BUG FIX [ 779377 ] Bookmarks update doesn't work (madbear)
++ BUG FIX [ 823755 ] Sort doesn't work from Home page (madbear)
++ BUG FIX [ 829199 ] updater doesn't detect last digit (madbear)
++ BUG FIX [ 853785 ] wrong owner when entering task hours (madbear)
++ BUG FIX [ 853143 ] SQL Error on inactive project listing (madbear)
++ BUG FIX [ 853207 ] charset in generated emails now uses setCharset from 
+  language files (madbear)
++ BUG FIX [ 857710 ] headerfunction() fatal errors (madbear)
++ BUG FIX [ 858347 ] Email notifications settings don't update correctly (madbear)
++ BUG FIX [ 861562 ] PHP Version checking problem when version is greater than 4 (madbear)
++ BUG FIX: Fixed the project listing where if you do the paging it 
+  would reset back to display active projects only (madbear)
++ BUG FIX [ 814968 ] Cannot change password in 2.5.2 (madbear)
++ BUG FIX [ 814972 ] Login problem 2.5.2 (madbear)
++ BUG FIX [ 816492 ] SQL Error in the installation/upgrade scripts (madbear)
++ BUG FIX [ 816544 ] logo is broken on view client screen (patched by olsh)
++ BUG FIX [ 819166 ] the connected users are now displayed again (madbear)
++ BUG FIX [ 820828 ] instead of trying to start you out on the page you logged 
+  out from, you now can select your desired start page from the user 
+  preferences, by default you will start on the home page. (madbear)
++ Session name and id are no longer added to the URL (madbear)
++ Cookie authentication has been fixed (madbear)
++ Cookie/Session security greatly enhanced through the use of a secret key, 
+  which is unique per installation (madbear)
++ ENHANCED display and functionality of Gantt charts (madbear)
++ ADDED Task ID to the display where appropiate (madbear)
++ ADDED total selection to resource usage report (mcook83)
++ ADDED project breakdown report (mcook83)
++ UPGRADED JpGraph to latest version 1.14 (madbear)
++ UPGRADED Javascript overLib to 3.51 (madbear)
++ UPGRADED DHTML Calendar popup to version 0.9.5 (madbear)
++ UPGRADED phpmailer to latest version 1.71 (madbear)
++ ADDED Language Files for Swedish, thanks Patrik & Andreas Pada
++ UPDATED Norwegian language file, thanks Eirik Helgeland
++ UPDATED Chinese simplified language file, thanks Yanmiao Liu 
+
+
+# NetOffice 2.5.2 / 2003-09-27
++ Created new upgrade script similar to the setup script (madbear)
++ Incomplete language files will now have non-translated strings/arrays
+  set in english rather than being blank. (madbear)
++ New global language file to allow customizations of language
+  strings and arrays that will survive upgrades. You will need to create 
+  the file "languages/lang_global.php" and take strings/array from say 
+  lang_en.php that you want to modify and place the modified string in 
+  the new global file leaving the original language file intact. (madbear)
++ Fixed a possible security hole in how sessions where being used,
+  and session code clean up. (madbear)
++ Wrote session module to use the NetOffice database as the session
+  storage container. (madbear)
++ DISABLED cookie authentication because it needs overhauled and didn't
+  have time to do it in this release, it will return soon. (madbear)
++ Fixed the PMA (Project Manager Admin) permissions to allow the editing
+  of client oraganizations and client users. [784865] (madbear)
++ Added phase status report (mcook83)
++ Fixed scripts/taskreminder.php. Checks to see if notifications are
+  enabled before executing. Uses setup variables for table names (mcook83)
++ Reworked the core library for speed improvements. (madbear)
++ Added date and user selection to reports (completed tasks, logged hours,
+  resource usage) as well as matching export fnuctions (mcook83)
++ BUG FIX [792156] Problem with JpGraph not displaying Gantt charts has 
+  been corrected (madbear)
++ BUG FIX [780208] duplicating task time on cancel from edit. (madbear)
++ Various UI improvements (madbear)
++ Force PHP 4.1.0 or greater, if you are using anything older you will need 
+  to upgrade to run NetOffice. (madbear)
++ Fixed update checker to work with new versioning scheme. (madbear)
++ Other code optimizations for speed gains. (madbear)
+
+
+# NetOffice 2.5.1 / 2003-07-23
++ Fixed broken theme images (madbear)
++ Fixed bug #768363 - Problem with Bookmarks (madbear)
++ Fixed bug #768688 - Single quotes break SQL insert  (madbear)
++ added task status notification script, can be run from cron (mcook83)
++ added reports: completed, time, overdue, and snapshot (mcook83)
++ added list all function to project listings (madbear)
++ fixed redundant preferences menu when logged in as admin (madbear)
++ created a report page to link custom reports on (madbear)
++ added SiteSpring theme, missing some icons which will come later (madbear)
++ Other small fixes/enhancements not listed
+
+
+# NetOffice 2.5 / 2003-07-02
++ Notification: support for smtp authentification (phpmailer class used)
++ Tasks and subtasks: automated insertion in updates (status, priority, datedue changes)
++ Services creation is now available, will be used in conjunction with time
+  tracking module to show costs
++ Colored icons with priorities
++ Postnuke integration stopped and changes in code removed
++ Xoops integration stopped and changes in code removed
++ MSSQL integration stopped and changes in code removed
++ PostgreSQL integration stopped and changes in code removed
++ Automatic/remember login with cookie
++ Completed task are no longer displayed on the home page under 'My Tasks'
++ Made it so that the admin navigation link is only displayed to Administrators
++ Bug fix: Logging out on the project site causes login problems for staff
++ Multilingual: Latvian
++ Even more corrective measures, bug fixes, and misc visual enhancements
